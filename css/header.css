@@ -1,5 +1,7 @@
 .container-header{
-    padding: calc(var(--padding) * 1.25) 0;
+    padding: calc(var(--padding) * 1.75) 0;
+    position: fixed;
+    width: 100%;
 }
 
 .content-header{
@@ -12,11 +14,11 @@
 
 .menu-header {
     display: flex;
-    gap: var(--gap);
+    gap: calc(var(--gap) * 1.75);
 }
 
 .logo-header{
-    font-size: calc(var(--font-size) * 1.5);
+    font-size: calc(var(--font-size) * 1.75);
     color: var(--light-color);
 }
 
@@ -25,6 +27,7 @@
     text-decoration: none;
     color: var(--light-color);
     transition: color var(--transition) ease;
+    font-size: calc(var(--font-size) * 1.125);
   }
   
   .menu-header_link::after {

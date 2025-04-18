@@ -46,3 +46,10 @@
   .menu-header_link:hover::after {
     transform: scaleX(1);
   }
+
+.container-header, 
+.menu-header_link, 
+.logo-header {
+    transition: all var(--transition, 0.3s) ease; 
+    /* Usa --transition si está definida, sino 0.3s por defecto */
+}

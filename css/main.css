@@ -46,7 +46,6 @@
   
   .skill {
     margin-bottom: 20px;
-    
   }
   
   .skill p {
@@ -77,7 +76,7 @@
   }
 
   .container-sobremi{
-    padding: 20px 40px;
+    padding: 10px 40px;
     display: grid;
     place-content: start;
     gap: 40px;
@@ -94,7 +93,7 @@
     bottom: -10;
     width: 20%;
     height: 4px;
-    background-color: var(--dark-color);
+    background-color: var(--bg-tertiary);
     transform: scaleX(1);
     transform-origin: left;
   }
@@ -102,5 +101,4 @@
   .container-sobremi-paragraph{
     line-height: 35px;
     font-size:18px;
-
   }

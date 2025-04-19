@@ -85,7 +85,3 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 800);
     });
   });
-
-  document.querySelectorAll('.container-sobremi-paragraph').forEach(el => {
-    el.setAttribute('style', 'font-weight: 100 !important;');
-  });

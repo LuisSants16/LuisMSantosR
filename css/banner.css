@@ -1,5 +1,5 @@
 
-.content-banner{
+.container-banner{
     background-image: linear-gradient(var(--bg-dark-transp),var(--bg-dark-transp)), url(../img/banner.jpeg);
     background-position: center;
     background-size: cover;
@@ -12,8 +12,8 @@
 }
 
 .content-banner{
-    display: flex;
-    flex-direction: column;
+    width: 1250px;;
+    display: grid;
     gap: calc(var(--gap) * 1.25);
     color: var(--light-color);
     letter-spacing: 1px;
@@ -25,4 +25,49 @@
 
 .content-banner_paragraph{
     font-size: calc(var(--font-size) * 2);
+}
+
+.content-banner_button {
+    width: 15%;
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-align: center;
+    background-color: var(--bg-tertiary);
+    border-radius: var(--border-radius_s);
+    color: var(--light-color);
+    overflow: hidden;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    z-index: 0;
+}
+
+.content-banner_button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, #ffffff41, #ffffff41);
+    transform: skewX(-20deg);
+    transition: left 1s ease;
+    z-index: 1;
+}
+
+.content-banner_button:hover::before {
+    left: 130%;
+}
+
+
+.content-banner_button:hover {
+    background-color: var(--bg-secondary); /* se mantiene igual */
+    transition: 1s;
+}
+
+/* Asegura que el texto esté por encima del brillo */
+.content-banner_button span {
+    position: relative;
+    z-index: 2;
 }

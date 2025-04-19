@@ -74,3 +74,18 @@ window.addEventListener("scroll", function() {
         }
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const barras = document.querySelectorAll('.progreso');
+    barras.forEach(barra => {
+      const width = barra.style.width;
+      barra.style.width = '0';
+      setTimeout(() => {
+        barra.style.width = width;
+      }, 800);
+    });
+  });
+
+  document.querySelectorAll('.container-sobremi-paragraph').forEach(el => {
+    el.setAttribute('style', 'font-weight: 100 !important;');
+  });

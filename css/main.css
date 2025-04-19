@@ -1,0 +1,106 @@
+/* main */
+
+.container-main {
+    background-color: var(--bg-primary);
+    padding: 40px;
+}
+
+.container-main > section:not(:last-child) {
+    margin-bottom: 40px;
+}
+
+/* estilos de informacion */
+
+.container-informacion{
+    max-width: var(--max-width);
+    margin: auto;
+    background-color: var(--bg-light);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding:  60px 20px;
+}
+
+.content-info{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.content-info img{
+    width: 200px;
+    margin: auto;
+    object-fit: cover;
+}
+
+.content-info ul{
+    list-style: none;
+    display: grid;
+    align-content: center;
+    gap: 20px;
+    padding-left: 20px;
+}
+
+.content-skills {
+    margin-top: 30px;
+    padding: 0 20px;
+  }
+  
+  .skill {
+    margin-bottom: 20px;
+    
+  }
+  
+  .skill p {
+    margin: 0 0 5px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .skill span {
+    float: right;
+    color: #555;
+  }
+  
+  .barra {
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 10px;
+  }
+  
+  .progreso {
+    background-color: #007bff;
+    height: 100%;
+    border-radius: 20px;
+    width: 0;
+    transition: width 1s ease-in-out;
+  }
+
+  .container-sobremi{
+    padding: 20px 40px;
+    display: grid;
+    place-content: start;
+    gap: 40px;
+  }
+
+  .container-sobremi h2{
+    font-size: 35px;
+    position: relative;
+  }
+
+  .container-sobremi h2::before{
+    content: '';
+    position: absolute;
+    bottom: -10;
+    width: 20%;
+    height: 4px;
+    background-color: var(--dark-color);
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+  .container-sobremi-paragraph{
+    line-height: 35px;
+    font-size:18px;
+
+  }

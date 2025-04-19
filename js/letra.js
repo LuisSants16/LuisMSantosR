@@ -39,4 +39,4 @@ const maquinaEscribir3 = (text = '', tiempo = 200, tiempoBorrado = 50, etiqueta 
   escribir = setInterval(escribirTexto, tiempo);
 };
 
-maquinaEscribir3("Luis M. Santos Rivera", 100, 50, maquina3);
+maquinaEscribir3("Desarrollador Web Front-End", 100, 50, maquina3);

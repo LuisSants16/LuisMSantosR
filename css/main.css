@@ -6,7 +6,7 @@
 }
 
 .container-main > section:not(:last-child) {
-    margin-bottom: 40px;
+    margin-bottom: 80px;
 }
 
 /* estilos de informacion */
@@ -101,4 +101,40 @@
   .container-sobremi-paragraph{
     line-height: 35px;
     font-size:18px;
+  }
+
+  /* servicios web */
+
+  .container-servicios{
+    max-width: var(--max-width);
+    margin: auto;
+    text-align: center;
+  }
+
+  .content-servicios {
+    display: grid;
+    gap: 20px;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .content-servicio {
+    background-color: var(--bg-secondary);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .content-servicio:hover {
+    transform: translateY(-5px);
+  }
+  
+  .content-servicio ion-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: var(--color-acento, #007bff);
   }

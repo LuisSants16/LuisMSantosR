@@ -182,7 +182,6 @@
     line-height: 1.5;
   }
 
-/* Sección Stats */
 .container-stats {
   background-image: linear-gradient(var(--bg-dark-transp), var(--bg-dark-transp)), url(../img/referencias.webp);
   background-attachment: fixed;
@@ -190,21 +189,19 @@
   background-position: center;
   width: 100%;
   min-height: 50vh;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 40px 20px;
 }
-
-/* Ajuste de contenido de la sección */
 .content-stats {
-  width: 100%; /* Ajuste al 100% del contenedor */
-  max-width: 1250px; /* Añadir un max-width para evitar que se estire demasiado */
+  width: 100%;
+  max-width: 1250px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
 }
 
-/* Estilo para las cajas */
 .stat-box {
   color: #fff;
   text-align: center;

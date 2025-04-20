@@ -41,6 +41,7 @@
     font-size: 1rem;
     transition: background-color 0.3s ease;
     z-index: 0;
+    margin-top: 10px;
 }
 
 .content-banner_button::before {

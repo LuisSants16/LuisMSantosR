@@ -55,6 +55,7 @@ window.addEventListener("scroll", function() {
 
     if (posy > 100) {
         containerHeader.style.backgroundColor = "white";
+        containerHeader.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.3)"
         menuLinks.forEach(link => link.style.color = "var(--primary-color)");
         logoHeader.style.color = "var(--primary-color)";
         IconId.style.color = "var(--primary-color)";
@@ -64,6 +65,7 @@ window.addEventListener("scroll", function() {
         }
     } else {
         containerHeader.style.backgroundColor = "inherit";
+        containerHeader.style.boxShadow = "none"
         menuLinks.forEach(link => link.style.color = "white");
         logoHeader.style.color = "white";
         IconId.style.color = "white";

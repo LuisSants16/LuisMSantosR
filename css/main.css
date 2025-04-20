@@ -2,7 +2,7 @@
 
 .container-main {
     background-color: var(--bg-primary);
-    padding: 40px;
+    padding: 40px 0;
 }
 
 .container-main > section:not(:last-child) {
@@ -43,30 +43,30 @@
     margin-top: 30px;
     padding: 0 20px;
   }
-  
+
   .skill {
     margin-bottom: 20px;
   }
-  
+
   .skill p {
     margin: 0 0 5px;
     font-size: 16px;
     font-weight: 500;
     color: #333;
   }
-  
+
   .skill span {
     float: right;
     color: #555;
   }
-  
+
   .barra {
     background-color: #e0e0e0;
     border-radius: 20px;
     overflow: hidden;
     height: 10px;
   }
-  
+
   .progreso {
     background-color: #007bff;
     height: 100%;
@@ -96,7 +96,7 @@
     background-color: var(--bg-tertiary);
 
   }
-  
+
   .container-sobremi-paragraph{
     line-height: 35px;
     font-size:18px;
@@ -137,7 +137,7 @@
     padding: 40px 20px;
     margin-top: 40px;
   }
-  
+
   .content-servicio {
     background: #fff;
     padding: 30px 20px;
@@ -151,11 +151,11 @@
     align-items: center;
     gap: 15px;
   }
-  
+
   .content-servicio:hover {
     transform: translateY(-8px);
   }
-  
+
   .content-servicio ion-icon {
     font-size: 3rem;
     color: #0078ff;
@@ -163,22 +163,78 @@
     margin: auto;
     margin-bottom: 10px;
   }
-  
+
   .content-servicio:hover ion-icon {
     transform: scale(1.2);
     color: #3393ff;
   }
-  
+
   .content-servicio h3 {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
     color: #1e1e1e;
   }
-  
+
   .content-servicio p {
     font-size: 14px;
     color: #4e4e4e;
     line-height: 1.5;
   }
-  
+
+/* Sección Stats */
+.container-stats {
+  background-image: linear-gradient(var(--bg-dark-transp), var(--bg-dark-transp)), url(../img/referencias.webp);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 50vh;
+  display: grid;
+  place-items: center;
+  padding: 40px 20px;
+}
+
+/* Ajuste de contenido de la sección */
+.content-stats {
+  width: 100%; /* Ajuste al 100% del contenedor */
+  max-width: 1250px; /* Añadir un max-width para evitar que se estire demasiado */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+/* Estilo para las cajas */
+.stat-box {
+  color: #fff;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.stat-box_icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 8px solid rgba(255, 255, 255, 0.3);
+  margin: 0 auto 20px;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+}
+
+.stat-box_icon span {
+  font-size: 32px;
+  line-height: 1;
+  color: white;
+}
+
+.stat-box h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.stat-box p {
+  font-size: 32px;
+  font-weight: bold;
+}

@@ -55,10 +55,10 @@
     transform: scaleX(1);
   }
 
-.container-header, 
-.menu-header_link, 
-.logo-header {
-    transition: var(--transition); 
+  .container-header, 
+  .menu-header_link, 
+  .logo-header {
+     transition: var(--transition); 
 }
 
 @media(width<=1250px){

@@ -63,12 +63,83 @@
 
 
 .content-banner_button:hover {
-    background-color: var(--bg-secondary); /* se mantiene igual */
+    background-color: var(--bg-secondary);
     transition: 1s;
 }
 
-/* Asegura que el texto esté por encima del brillo */
+
 .content-banner_button span {
     position: relative;
     z-index: 2;
+}
+
+@media (width <= 1250px) {
+    .content-banner {
+        width: 90%;
+    }
+
+    .content-banner_name {
+        font-size: calc(var(--font-size) * 4);
+    }
+
+    .content-banner_paragraph {
+        font-size: calc(var(--font-size) * 1.75);
+    }
+
+    .content-banner_button {
+        width: 20%;
+    }
+}
+
+/* <= 992px */
+@media (width <= 992px) {
+    .content-banner_name {
+        font-size: calc(var(--font-size) * 3.25);
+    }
+
+    .content-banner_paragraph {
+        font-size: calc(var(--font-size) * 1.5);
+    }
+
+    .content-banner_button {
+        width: 30%;
+        font-size: 0.95rem;
+    }
+}
+
+/* <= 768px */
+@media (width <= 768px) {
+    .content-banner_name {
+        font-size: calc(var(--font-size) * 2.5);
+    }
+
+    .content-banner_paragraph {
+        font-size: calc(var(--font-size) * 1.25);
+    }
+
+    .content-banner_button {
+        width: 40%;
+        font-size: 0.9rem;
+    }
+}
+
+/* <= 576px */
+@media (width <= 576px) {
+    .content-banner {
+        gap: calc(var(--gap));
+    }
+
+    .content-banner_name {
+        font-size: calc(var(--font-size) * 2);
+    }
+
+    .content-banner_paragraph {
+        font-size: calc(var(--font-size) * 1.05);
+    }
+
+    .content-banner_button {
+        width: 60%;
+        font-size: 0.85rem;
+        padding: 8px 16px;
+    }
 }

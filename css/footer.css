@@ -1,0 +1,169 @@
+footer.container_footer {
+    background-color: #1f1f1f;
+    color: #f1f1f1;
+    padding: 40px 20px;
+}
+
+.conta_footer {
+    max-width: 1250px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.first_footer h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+hr {
+    border: 0;
+    height: 2px;
+    background: #444;
+    margin: 20px auto;
+    width: 60%;
+}
+
+.second_footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.cont-second_footer {
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+}
+
+.acrostic_name{
+    text-align: left;
+    padding-left: 20px;
+}
+
+.acrostic_name span {
+    display: inline-block;
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    line-height: 1.6;
+    white-space: nowrap;
+}
+
+.acrostic_name b {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-right: 6px;
+}
+
+.social_name h3 {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.social_name p {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: #cccccc;
+}
+
+.social-second_footer a {
+    margin: 0 8px;
+    font-size: 1.3rem;
+    color: #00ffd5;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.social-second_footer a:hover {
+    color: #ffffff;
+    transform: scale(1.2);
+}
+
+.footer_navbar {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer_navbar a {
+    color: #f1f1f1;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.footer_navbar a:hover {
+    color: var(--primary-color);
+}
+
+.tertiary_footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.85rem;
+    color: #aaaaaa;
+}
+
+.tertiary_footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.tertiary_footer a:hover {
+    color: #ffffff;
+}
+
+/* ============================= */
+/* 📱 Responsive para tablets y celulares */
+/* ============================= */
+
+/* Tablets (≤991px) */
+@media screen and (max-width: 991px) {
+    .second_footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cont-second_footer {
+        max-width: 90%;
+    }
+
+    .acrostic_name span {
+        font-size: 1rem;
+    }
+}
+
+/* Celulares (≤576px) */
+@media screen and (max-width: 576px) {
+    footer.container_footer {
+        padding: 30px 15px;
+    }
+
+    .first_footer h2 {
+        font-size: 1.5rem;
+    }
+
+    .acrostic_name span {
+        font-size: 0.95rem;
+        white-space: normal;
+    }
+
+    .social-second_footer a {
+        font-size: 1.2rem;
+        margin: 0 6px;
+    }
+
+    .footer_navbar {
+        align-items: center;
+    }
+
+    .footer_navbar a {
+        font-size: 0.9rem;
+    }
+}

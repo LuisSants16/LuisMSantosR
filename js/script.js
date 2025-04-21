@@ -1,4 +1,19 @@
 
+document.querySelectorAll('.menu-header_link').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault(); // Evita que aparezca el hash en la URL
+
+    const targetId = this.getAttribute('href').substring(1); // Quita el "#"
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // También puedes actualizar clases .active aquí si necesitas
+  });
+});
+
 let menuAbierto = false;
 
 function llamar() {
@@ -144,4 +159,3 @@ document.addEventListener("DOMContentLoaded", () => {
       contenedor.style.transform = `translateX(-${index * 100}%)`;
     }, 4000);
   };
-  

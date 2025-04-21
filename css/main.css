@@ -456,3 +456,88 @@
   color: #999;
 }
 
+@media (max-width: 991px) {
+  .container-sobremi {
+    padding: 10px 30px;
+  }
+
+  .container-sobremi h2 {
+    font-size: 30px;
+  }
+
+  .container-sobremi-paragraph {
+    font-size: 17px;
+    line-height: 30px;
+  }
+
+  .container-servicios h2,
+  .portfolio-title,
+  .titulo-blog {
+    font-size: 36px;
+  }
+
+  .content-info img {
+    width: 180px;
+  }
+
+  .testimonios {
+    height: 50vh;
+  }
+
+  .testimonio-info {
+    font-size: 18px;
+  }
+
+  .project-info h3,
+  .contenido-blog h3 {
+    font-size: 17px;
+  }
+
+  .contenido-blog p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container-sobremi {
+    padding: 10px 20px;
+  }
+
+  .container-sobremi h2 {
+    font-size: 26px;
+  }
+
+  .container-sobremi-paragraph {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .container-servicios h2,
+  .portfolio-title,
+  .titulo-blog {
+    font-size: 30px;
+  }
+
+  .content-info img {
+    width: 150px;
+  }
+
+  .testimonios {
+    height: auto;
+    padding: 40px 15px;
+  }
+
+  .testimonio-info {
+    font-size: 16px;
+  }
+
+  .project-info h3,
+  .contenido-blog h3 {
+    font-size: 16px;
+  }
+
+  .contenido-blog p {
+    font-size: 13px;
+  }
+}
+

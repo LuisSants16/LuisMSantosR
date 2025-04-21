@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Código en Archivos</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+
+</head>
+<body>
+
+    <div class="container">
+        <h2>Buscar Código en Archivos Excel y Word</h2>
+        <input type="file" id="fileInput" webkitdirectory multiple accept=".xlsx, .xls, .docx">
+        <input type="text" id="codigo" placeholder="Ingrese el código a buscar">
+        <button id="buscarCodigoBtn">Buscar</button>
+        <button id="limpiarBtn">Limpiar</button>
+        <div id="resultado"></div>
+        
+        <h2>Buscar por Descripción</h2>
+        <input type="text" id="descripcion" placeholder="Ingrese la descripción a buscar">
+        <button id="buscarDescripcionBtn">Buscar</button>
+        <div id="resultadoDescripcion"></div>
+    </div>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #1e1e1e;
+            color: white;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #2c2c2c;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #f8f9fa;
+        }
+        input, button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        input {
+            background: #444;
+            color: white;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            cursor: pointer;
+            border: none;
+            font-weight: bold;
+        }
+        button:hover {
+            background: #218838;
+        }
+        #resultado, #resultadoDescripcion {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background: #333;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.1);
+        }
+        .resultado-item {
+            background: #555;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        a {
+            color: #4ea8de;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <script>
+        document.getElementById('buscarCodigoBtn').addEventListener('click', buscarCodigo);
+        document.getElementById('buscarDescripcionBtn').addEventListener('click', buscarDescripcion);
+        document.getElementById('limpiarBtn').addEventListener('click', limpiarResultados);
+
+        function normalizarTexto(texto) {
+            return texto.toLowerCase().replace(/\s+/g, ''); // Convierte a minúsculas y elimina espacios
+        }
+
+        function buscarCodigo() {
+            let archivos = document.getElementById('fileInput').files;
+            let codigo = normalizarTexto(document.getElementById('codigo').value.trim());
+            let resultadoDiv = document.getElementById('resultado');
+            resultadoDiv.innerHTML = "";
+            
+            if (!codigo) {
+                resultadoDiv.innerHTML = "<p style='color:red;'>Ingrese un código válido.</p>";
+                return;
+            }
+            
+            for (let archivo of archivos) {
+                if (archivo.name.endsWith('.xlsx') || archivo.name.endsWith('.xls')) {
+                    leerExcel(archivo, codigo, resultadoDiv, false);
+                }
+            }
+        }
+
+        function buscarDescripcion() {
+            let archivos = document.getElementById('fileInput').files;
+            let descripcion = normalizarTexto(document.getElementById('descripcion').value.trim());
+            let resultadoDiv = document.getElementById('resultadoDescripcion');
+            resultadoDiv.innerHTML = "";
+            
+            if (!descripcion) {
+                resultadoDiv.innerHTML = "<p style='color:red;'>Ingrese una descripción válida.</p>";
+                return;
+            }
+            
+            for (let archivo of archivos) {
+                if (archivo.name.endsWith('.xlsx') || archivo.name.endsWith('.xls')) {
+                    leerExcel(archivo, descripcion, resultadoDiv, true);
+                }
+            }
+        }
+
+        function leerExcel(archivo, busqueda, resultadoDiv, esDescripcion) {
+            let reader = new FileReader();
+            reader.onload = function (e) {
+                let data = new Uint8Array(e.target.result);
+                let workbook = XLSX.read(data, { type: 'array' });
+                
+                workbook.SheetNames.forEach(sheetName => {
+                    let sheet = workbook.Sheets[sheetName];
+                    let jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+                    
+                    jsonData.forEach((fila, filaIndex) => {
+                        fila.forEach((celda, colIndex) => {
+                            if (celda && normalizarTexto(celda.toString()).includes(busqueda)) {
+                                let fileURL = URL.createObjectURL(archivo);
+                                let codigo = fila[0] || 'Código no encontrado';
+                                let fecha = fila[1] || 'Fecha no encontrada';
+                                let nombreArchivo = archivo.name;
+                                
+                                if (esDescripcion) {
+                                    resultadoDiv.innerHTML += `<p>Archivo: ${nombreArchivo}, Fecha: ${fecha}, Código: ${codigo}, Descripción: ${celda} <a href="${fileURL}" target="_blank">Abrir</a></p>`;
+                                } else {
+                                    resultadoDiv.innerHTML += `Encontrado en ${sheetName}###### ${nombreArchivo}, Hoja: ${sheetName}, Celda: ${XLSX.utils.encode_cell({ r: filaIndex, c: colIndex })} <a href="${fileURL}" target="_blank">Abrir</a><br>`;
+                                }
+                            }
+                        });
+                    });
+                });
+            };
+            reader.readAsArrayBuffer(archivo);
+        }
+
+        function limpiarResultados() {
+            document.getElementById('resultado').innerHTML = "";
+            document.getElementById('resultadoDescripcion').innerHTML = "";
+        }
+    </script>
+</body>
+</html>

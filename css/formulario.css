@@ -1,0 +1,130 @@
+.container-form {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(../img/contacto.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .content-form {
+    max-width: 1250px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.692);
+    border-radius: var(--border-radius_m);
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--gap);
+    color: var(--light-color);
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+    border-radius: 10px;
+  }
+  
+  .info-contacto h2,
+  .formulario-contacto h2 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+  }
+  
+  .info-contacto p {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .redes-sociales {
+    margin-top: 40px;
+  }
+  
+  .redes-sociales a {
+    color: var(--light-color);
+    margin-right: 15px;
+    font-size: 1.5rem;
+    transition: 0.3s;
+  }
+  
+  .redes-sociales a:hover {
+    color: var(--primary-color);
+  }
+  
+  .formulario-contacto input,
+  .formulario-contacto textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    border: none;
+    border-radius: var(--border-radius_s);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+  
+  .formulario-contacto input::placeholder,
+  .formulario-contacto textarea::placeholder {
+    color: #ccc;
+  }
+  
+  .formulario-contacto button {
+    padding: 12px 25px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--border-radius_s);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .formulario-contacto button:hover {
+    background-color: var(--bg-secondary);
+  }
+
+  @media (max-width: 991px) {
+    .content-form {
+      grid-template-columns: 1fr;
+      padding: 30px;
+    }
+  
+    .formulario-contacto h2,
+    .info-contacto h2 {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  
+    .info-contacto p {
+      justify-content: center;
+    }
+  
+    .redes-sociales {
+      text-align: center;
+    }
+  
+    .formulario-contacto input,
+    .formulario-contacto textarea {
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .content-form {
+      padding: 25px 20px;
+    }
+  
+    .formulario-contacto input,
+    .formulario-contacto textarea {
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+  
+    .formulario-contacto button {
+      width: 100%;
+      font-size: 1rem;
+    }
+  
+    .redes-sociales a {
+      margin: 10px 8px;
+      font-size: 1.4rem;
+    }
+  }
+  

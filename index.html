@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="./css/formulario.css">
     <link rel="stylesheet" href="./css/footer.css">
 
-    <script src="https://kit.fontawesome.com/d70c66a935.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
@@ -295,49 +296,61 @@
         </section>  
     </main>
     
-    <div class="container-form">
-      <form action="" class="content-form">
-
-      </form>
-    </div>
-
-    <footer class="container_footer">
-      <div class="conta_footer">
-          <div class="first_footer">
-              <h2>Luis Santos</h2>
+    <section class="container-form">
+      <div class="content-form">
+        <div class="info-contacto">
+          <h2>Contáctame</h2>
+          <p><i class="fas fa-map-marker-alt"></i> Villa María del Triunfo - Lima - Lima</p>
+          <p><i class="fas fa-phone-alt"></i> +51 982010178</p>
+          <p><i class="fas fa-envelope"></i> lmsr.1601@gmail.com</p>
+          <div class="redes-sociales">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
           </div>
-          <hr>
-          <div class="second_footer">
-              <div class="cont-second_footer acrostic_name">
-                  <span><b>L</b><span> </span>eyendo líneas de código con destreza,</span>
-                  <span><b>U</b><span> </span>niendo mundos virtuales con fortaleza,</span>
-                  <span><b>I</b><span> </span>nmerso en la creación front-end,</span>
-                  <span><b>S</b><span> </span>intiendo el ritmo, la música es tu ambiente.</span>
-              </div>
-              <div class="cont-second_footer social_name">
-                  <h3>&copy; Luis Santos</h3>
-                  <p>Desarrollador Front-End</p>
-                  <div class="social-second_footer">
-                      <a href="https://web.archive.org/web/20241120024017/https://www.facebook.com/profile.php?id=100081109827203" target="_blank"><i class="bi bi-facebook"></i></a>
-                      <a href="https://web.archive.org/web/20241120024017/https://www.instagram.com/luis.sants/" target="_blank"><i class="bi bi-instagram"></i></a>
-                      <a href="https://web.archive.org/web/20241120024017/mailto:lmsr.1601@gmail.com" target="_blank"><i class="bi bi-envelope-fill"></i></a>
-                      <a href="https://web.archive.org/web/20241120024017/https://www.linkedin.com/in/luis-miguel-santos-rivera-020a6a24b/" target="_blank"><i class="bi bi-linkedin"></i></a>
-                      <a href="https://web.archive.org/web/20241120024017/https://api.whatsapp.com/send/?phone=51982010178" target="_blank"><i class="bi bi-whatsapp"></i></a>
-                  </div>
-              </div>
-              <div class="cont-second_footer footer_navbar">
-                  <a href="#inicio">Inicio</a>
-                  <a href="#sobremi">Sobre Mi</a>
-                  <a href="#especialidades">Especialidades</a>
-                  <a href="#portafolio">Portafolio</a>   
-                  <a href="#testimonios">Testimonios</a>
-                  <a href="#contacto">Contacto</a>
-              </div>
-          </div>
-          <div class="tertiary_footer">
-              <p>Todos los derechos reservados a &copy; <a href="https://web.archive.org/web/20241120024017/https://github.com/LuisSantos16" target="_blank">Luis Miguel Santos Rivera</a></p>
-          </div>
+        </div>
+    
+        <form class="formulario-contacto">
+          <h2>Escríbeme</h2>
+          <input type="text" placeholder="Tu nombre" required>
+          <input type="email" placeholder="Tu correo" required>
+          <input type="text" placeholder="Asunto">
+          <textarea rows="6" placeholder="Tu mensaje..." required></textarea>
+          <button type="submit">Enviar mensaje</button>
+        </form>
       </div>
+    </section>
+    
+    <footer class="footer">
+      <div class="footer-container">
+        <h2 class="footer-title">Luis Santos</h2>
+    
+        <div class="footer-social">
+          <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+          <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+          <a href="mailto:lmsr.1601@gmail.com" target="_blank"><i class="bi bi-envelope-fill"></i></a>
+          <a href="https://linkedin.com" target="_blank"><i class="bi bi-linkedin"></i></a>
+          <a href="https://wa.me/51982010178" target="_blank"><i class="bi bi-whatsapp"></i></a>
+        </div>
+    
+        <nav class="footer-nav">
+          <a href="#inicio">Inicio</a>
+          <a href="#sobremi">Sobre mí</a>
+          <a href="#especialidades">Especialidades</a>
+          <a href="#portafolio">Portafolio</a>
+          <a href="#testimonios">Testimonios</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+    
+        <div class="footer-bottom">
+          <p>&copy; 2025 <a href="https://github.com/LuisSantos16" target="_blank">Luis Miguel Santos Rivera</a>. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+    
+    
 
     <script src="./js/script.js"></script>
     <script src="./js/letra.js"></script>

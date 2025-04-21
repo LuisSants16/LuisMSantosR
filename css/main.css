@@ -457,6 +457,34 @@
 }
 
 @media (max-width: 991px) {
+  .container-informacion {
+    padding: 30px;
+  }
+
+  .container-skills {
+      flex-direction: column;
+      gap: 30px;
+  }
+
+  .content-info,
+  .content-skills {
+      width: 100%;
+  }
+
+  .content-info img{
+    margin-bottom: 10px;
+  }
+
+  .content-info ul {
+      text-align: center;
+      padding-left: 0;
+  }
+
+  .skill p {
+      flex-direction: row;
+      justify-content: space-between;
+  }
+
   .container-sobremi {
     padding: 10px 30px;
   }
@@ -474,6 +502,10 @@
   .portfolio-title,
   .titulo-blog {
     font-size: 36px;
+  }
+
+  .container-servicios_paragraph{
+    padding: 0 10px;
   }
 
   .content-info img {
@@ -499,8 +531,38 @@
 }
 
 @media (max-width: 576px) {
+  .container-informacion {
+    padding: 20px;
+  }
+
+  .content-info img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .content-info ul {
+    font-size: 0.95rem;
+  }
+
+  .content-skills{
+    padding: 0;
+  }
+
+  .content-skills h2,
+  .container-sobremi h2 {
+    font-size: 1.25rem;
+  }
+
+  .container-sobremi-paragraph {
+    font-size: 0.95rem;
+  }
+
+  .skill p {
+      font-size: 0.95rem;
+  }
   .container-sobremi {
-    padding: 10px 20px;
+    padding: 0;
+    margin-top: 10px;
   }
 
   .container-sobremi h2 {
@@ -516,10 +578,6 @@
   .portfolio-title,
   .titulo-blog {
     font-size: 30px;
-  }
-
-  .content-info img {
-    width: 150px;
   }
 
   .testimonios {

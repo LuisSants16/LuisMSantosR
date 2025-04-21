@@ -87,3 +87,61 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 800);
     });
   });
+
+  window.onload = function () {
+    const testimonios = [
+      {
+        nombre: "Ana Rodríguez",
+        cargo: "Diseñadora Gráfica",
+        mensaje: "Excelente trabajo, muy profesional.",
+        foto: "https://randomuser.me/api/portraits/women/44.jpg"
+      },
+      {
+        nombre: "Carlos Pérez",
+        cargo: "CEO - DevCompany",
+        mensaje: "Rápido, eficiente y con una estética impecable.",
+        foto: "https://randomuser.me/api/portraits/men/36.jpg"
+      },
+      {
+        nombre: "Luisa Méndez",
+        cargo: "Emprendedora",
+        mensaje: "Me encantó el resultado final.",
+        foto: "https://randomuser.me/api/portraits/women/68.jpg"
+      },
+      {
+        nombre: "Mario Díaz",
+        cargo: "Gerente Comercial",
+        mensaje: "El proyecto fue entregado con excelente calidad.",
+        foto: "https://randomuser.me/api/portraits/men/85.jpg"
+      }
+    ];
+  
+    const slider = document.querySelector('.slider-testimonios');
+    const contenedor = document.createElement('div');
+    contenedor.classList.add('contenedor-slider');
+  
+    testimonios.forEach((persona) => {
+      const div = document.createElement('div');
+      div.className = 'testimonio';
+      div.innerHTML = `
+        <div class="testimonio-info">
+          <img src="${persona.foto}" alt="${persona.nombre}">
+          <div>
+            <h4>${persona.nombre}</h4>
+            <span>${persona.cargo}</span>
+          </div>
+        </div>
+        <p>"${persona.mensaje}"</p>
+      `;
+      contenedor.appendChild(div);
+    });
+  
+    slider.appendChild(contenedor);
+  
+    let index = 0;
+    setInterval(() => {
+      index = (index + 1) % testimonios.length;
+      contenedor.style.transform = `translateX(-${index * 100}%)`;
+    }, 4000);
+  };
+  

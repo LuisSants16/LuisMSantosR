@@ -43,6 +43,10 @@ body{
     font-family: var(--font-family);
 }
 
+body.scroll-activo .menu-header_link::after {
+    background-color: var(--primary-color);
+  }  
+
 .primary-color{
     color: var(--primary-color);
 }

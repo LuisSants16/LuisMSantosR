@@ -61,36 +61,40 @@ document.addEventListener('click', function(e) {
 
 
 window.addEventListener("scroll", function() {
-    let posy = window.pageYOffset;
-    let containerHeader = document.getElementById("container-header");
-    let menuLinks = document.querySelectorAll(".menu-header_link");
-    let logoHeader = document.querySelector(".logo-header");
-    let IconId = document.getElementById("IconId");
-    let menuHeaderId = document.getElementById("menu-headerId");
+  let posy = window.pageYOffset;
+  let containerHeader = document.getElementById("container-header");
+  let menuLinks = document.querySelectorAll(".menu-header_link");
+  let logoHeader = document.querySelector(".logo-header");
+  let IconId = document.getElementById("IconId");
+  let menuHeaderId = document.getElementById("menu-headerId");
 
-    if (posy > 100) {
-        containerHeader.style.backgroundColor = "white";
-        containerHeader.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.3)"
-        menuLinks.forEach(link => link.style.color = "var(--primary-color)");
-        logoHeader.style.color = "var(--primary-color)";
-        IconId.style.color = "var(--primary-color)";
-        
-        if (window.matchMedia('(max-width: 1250px)').matches) {
-            menuHeaderId.style.background = "white";
-        }
-    } else {
-        containerHeader.style.backgroundColor = "inherit";
-        containerHeader.style.boxShadow = "none"
-        menuLinks.forEach(link => link.style.color = "white");
-        logoHeader.style.color = "white";
-        IconId.style.color = "white";
-        menuHeaderId.style.background = "none";
-        
-        if (window.matchMedia('(max-width: 1250px)').matches) {
-            menuHeaderId.style.background = "inherit";
-        }
-    }
+  if (posy > 100) {
+      containerHeader.style.backgroundColor = "white";
+      containerHeader.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.3)";
+      menuLinks.forEach(link => link.style.color = "var(--primary-color)");
+      logoHeader.style.color = "var(--primary-color)";
+      logoHeader.style.textShadow = "none";
+      IconId.style.color = "var(--primary-color)";
+      document.body.classList.add("scroll-activo");
+
+      if (window.matchMedia('(max-width: 1250px)').matches) {
+          menuHeaderId.style.background = "white";
+      }
+  } else {
+      containerHeader.style.backgroundColor = "inherit";
+      containerHeader.style.boxShadow = "none";
+      menuLinks.forEach(link => link.style.color = "white");
+      logoHeader.style.color = "white";
+      logoHeader.style.textShadow = "0 0 calc(var(--font-size) * 0.625) var(--primary-color), 0 0 calc(var(--font-size) * 0.625) var(--primary-color),0 0 calc(var(--font-size) * 0.625) var(--primary-color)";
+      IconId.style.color = "white";
+      document.body.classList.remove("scroll-activo");
+
+      if (window.matchMedia('(max-width: 1250px)').matches) {
+          menuHeaderId.style.background = "inherit";
+      }
+  }
 });
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const barras = document.querySelectorAll('.progreso');

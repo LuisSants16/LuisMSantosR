@@ -1,5 +1,5 @@
 
-document.querySelectorAll('.menu-header_link').forEach(link => {
+document.querySelectorAll('.menu-header_link , .menu-footer_link').forEach(link => {
   link.addEventListener('click', function (e) {
     e.preventDefault(); // Evita que aparezca el hash en la URL
 

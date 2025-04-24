@@ -110,4 +110,9 @@
     .menu-header_link::after {
         display: none;
     }
+
+    .menu-mobile {
+        z-index: 9999;
+        pointer-events: auto;
+      }
 }

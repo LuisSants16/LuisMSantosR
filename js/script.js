@@ -1,16 +1,14 @@
 
 document.querySelectorAll('.menu-header_link , .menu-footer_link').forEach(link => {
   link.addEventListener('click', function (e) {
-    e.preventDefault(); // Evita que aparezca el hash en la URL
+    e.preventDefault();
 
-    const targetId = this.getAttribute('href').substring(1); // Quita el "#"
+    const targetId = this.getAttribute('href').substring(1);
     const targetElement = document.getElementById(targetId);
 
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: 'smooth' });
     }
-
-    // También puedes actualizar clases .active aquí si necesitas
   });
 });
 
